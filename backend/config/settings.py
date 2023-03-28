@@ -12,7 +12,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['django-backend-production.up.railway.app']
 
-CSRF_TRUSTED_ORIGINS = ['django-backend-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://django-backend-production.up.railway.app/']
 
 
 
