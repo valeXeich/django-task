@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  django:
+    build:
+      context: ./backend
+      dockerfile: DockerfileDev
+    restart: always
+    command: bash -c "python manage.py makemigrations
+      && python manage.py migrate
+      && gunicorn --bind 0.0.0.0:8000 config.wsgi"
+    env_file:
+    - django-variables.env
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+  aiogram:
+    build: ./aiogram_bot
+    restart: always
+    env_file:
+      - aiogram-variables.env
+    ports:
+      - '4000:4000'
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"

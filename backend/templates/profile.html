@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <div class="main__container">
+        <div class="main__info">
+            {% if user.telegram_photo %}
+            <img src="{{ user.telegram_photo }}" class="info__img" alt="avatar">
+            {% else %}
+            <div class="info__custom__img info__img">
+                <p>{{ user.first_name.0 }}</p>
+            </div>
+            {% endif %}
+            <div class="info__block">
+                <p class="info__text">Telegram id:</p>
+                <p class="info__text">{{ user.telegram_user_id }}</p>
+            </div>
+            <div class="info__block">
+                <p class="info__text">Telegram username:</p>
+                <p class="info__text">{{ user.username }}</p>
+            </div>
+            <div class="info__block">
+                <p class="info__text">First name:</p>
+                <p class="info__text">{{ user.first_name }}</p>
+            </div>
+            <div class="info__block">
+                <p class="info__text">Email:</p>
+                <p class="info__text">{{ user.email }}</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}

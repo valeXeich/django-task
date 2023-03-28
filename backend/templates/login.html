@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="main">
+    <div class="__container">
+    <form method="post" class="main__form">
+        {% csrf_token %}
+        {{ form.email }}
+        {{ form.password }}
+        <button type="submit" class="form__btn">Вход</button>
+    </form>
+    </div>
+</main>
+{% endblock content %}
