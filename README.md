@@ -2,6 +2,10 @@
 
 Deployed: https://django-backend-production.up.railway.app/
 
+Telegram bot: https://t.me/DjangoRegisterBot
+
+Command for sign up: /sign_up
+
 STACK:
 
 1. Djnago
